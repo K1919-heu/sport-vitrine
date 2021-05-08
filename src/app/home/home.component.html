@@ -1,0 +1,15 @@
+<div class="row">
+
+  <div class="col-sm-4">
+
+    <app-filter (sendFilter)="receiveFilter($event)"></app-filter>
+  </div>
+
+  <div class="col-sm-8 row">
+    <div  *ngFor="let art of articles">
+
+      <app-card-article  [article]="art"></app-card-article>
+
+    </div>
+  </div>
+</div>

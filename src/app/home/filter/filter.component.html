@@ -1,0 +1,25 @@
+<div class="card text-white bg-info">
+  <div class="card-header card">
+   Recherche
+
+  </div>
+  <div class="card-body">
+
+    <div class="form-group">
+    <label>Nom</label>
+      <input class="form-control" [(ngModel)]="article.nom">
+    </div>
+    <div class="form-group">
+      <label>Marque</label>
+      <input class="form-control" [(ngModel)]="article.marque">
+    </div>
+    <div class="form-group">
+      <label>Prix Max</label>
+      <input class="form-control" type="number" [(ngModel)]="article.prix">
+    </div>
+
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-secondary btn-block" (click)="filtrer()">Filtrer</button>
+  </div>
+</div>

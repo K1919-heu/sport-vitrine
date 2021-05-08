@@ -1,0 +1,46 @@
+<div class="card ">
+  <div class="card-header text-white bg-info">
+
+    Mon panier
+<button class="btn btn-secondary float-right" *ngIf="articles">Passer commande</button>
+  </div>
+  <div class="card-body">
+
+    <table class="table" *ngIf="articles">
+    <thead>
+    <tr>
+      <th>Produit</th>
+      <th>Marque</th>
+
+      <th width="30%">Quantité</th>
+      <th>Prix</th>
+    </tr>
+    </thead>
+      <tbody>
+      <tr *ngFor="let art of articles">
+        <td>{{art.nom}}</td>
+        <td>{{art.marque}}</td>
+
+        <td class="row">
+          <button class="btn btn-danger mr-2" (click)="minusQuantite(art)">
+            <i class="pi pi-minus"></i>
+          </button>
+          <input readonly [(ngModel)]="art.quantite" >
+          <button class="btn btn-success ml-2" (click)="plusQuantite(art)">
+            <i class="pi pi-plus"></i>
+          </button>
+        </td>
+        <td>{{art.prix * art.quantite}}</td>
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr>
+        <td colspan="3">Total Commande</td>
+        <td >{{totalCommande}}</td>
+      </tr>
+      </tfoot>
+    </table>
+
+
+  </div>
+</div>

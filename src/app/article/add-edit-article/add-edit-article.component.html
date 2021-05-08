@@ -1,0 +1,48 @@
+<form #f="ngForm" (ngSubmit)="f.form.valid && valider()">
+<div class="card">
+  <div class="card-header">{{title}}</div>
+  <div class="card-body">
+
+    <div class="form-group">
+      <label>Nom</label>
+      <input class="form-control col-sm-8" name="nom" [(ngModel)]="article.nom" #nom="ngModel" required>
+      <div class="text-danger" *ngIf="f.submitted && nom.invalid">Nom réquis</div>
+    </div>
+
+
+    <div class="form-group">
+      <label>Marque</label>
+      <input class="form-control col-sm-8" name="marque" [(ngModel)]="article.marque" #marque="ngModel" required>
+      <div class="text-danger" *ngIf="f.submitted && marque.invalid">Marque réquis</div>
+    </div>
+
+    <div class="form-group">
+      <label>Prix</label>
+      <input class="form-control col-sm-8" name="prix" type="number" [(ngModel)]="article.prix" #prix="ngModel" required>
+      <div class="text-danger" *ngIf="f.submitted && prix.invalid">Prix réquis</div>
+    </div>
+
+
+    <div class="form-group">
+      <label>Quantité</label>
+      <input class="form-control col-sm-8" name="quantite" type="number" [(ngModel)]="article.quantite" #quantite="ngModel" required>
+      <div class="text-danger" *ngIf="f.submitted && quantite.invalid">Quantité réquis</div>
+    </div>
+    <div class="form-group">
+      <label>Photo</label>
+      <input class="form-control col-sm-8" name="photo" [(ngModel)]="article.photo" #photo="ngModel" required>
+      <div class="text-danger" *ngIf="f.submitted && photo.invalid">Photo réquis</div>
+    </div>
+    <div class="form-group">
+      <label>Déscription</label>
+      <textarea class="form-control col-sm-8" name="desc" [(ngModel)]="article.description" #desc="ngModel" required>
+      </textarea>
+      <div class="text-danger" *ngIf="f.submitted && desc.invalid">Déscription réquis</div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-success float-right" type="submit" *ngIf="!idArticle">Ajouter</button>
+    <button class="btn btn-warning float-right" type="submit" *ngIf="idArticle">Modifier</button>
+  </div>
+</div>
+</form>

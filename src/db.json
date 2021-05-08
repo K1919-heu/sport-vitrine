@@ -1,0 +1,15 @@
+{
+  "articles": [
+    {
+      "nom": "article présentation",
+      "marque": "marque présentation",
+      "prix": 200,
+      "quantite": 100,
+      "photo": "https://www.cmgsportsclub.com/sites/default/files/clubs/208/MUSCULATION.jpg",
+      "description": "Description présentation ",
+      "id": 7
+    }
+  ],
+  "users": [],
+  "commandes": []
+}

@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-header">
+    <button class="btn btn-success float-right" routerLink="/articles/new">
+      <i class="pi pi-plus">Nouvel article</i>
+    </button>
+
+  </div>
+  <div class="card-body">
+
+
+    <app-liste-articles [articles]="articles" (sendDelete)="receiveDelete($event)"></app-liste-articles>
+  </div>
+
+
+</div>
